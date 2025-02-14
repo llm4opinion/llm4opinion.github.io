@@ -42,3 +42,7 @@ Thumbs.db
 *.tsbuildinfo 
 
 /basic_version
+
+# System limits - add a note about increasing inotify watches
+# To fix ENOSPC errors, run:
+# echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p

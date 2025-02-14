@@ -8,37 +8,57 @@
       active-text-color="#fff"
     >
       <el-menu-item index="/">
-        <span style="font-weight: 800">X-ISC</span>
+        <span style="font-weight: 800">Mind</span>
       </el-menu-item>
       <el-menu-item @click="scrollToSection('abstract')">Abstract</el-menu-item>
-      <el-menu-item @click="scrollToSection('failure')">Failure of intrinsic self-correction</el-menu-item>
-      <el-menu-item @click="scrollToSection('interpretation')">Interpretation</el-menu-item>
-      <el-menu-item @click="scrollToSection('alleviation')">Alleviation</el-menu-item>
-      <el-menu-item @click="scrollToSection('resources')">Resources</el-menu-item>
+      <el-menu-item @click="scrollToSection('introduction')"
+        >Introduction</el-menu-item
+      >
+      <el-menu-item @click="scrollToSection('evaluation_on_synthetic_dataset')"
+        >Evaluation on Synthetic Dataset</el-menu-item
+      >
+      <el-menu-item @click="scrollToSection('evaluation_on_real-world_dataset')"
+        >Evaluation on Real-world Dataset</el-menu-item
+      >
+      <el-menu-item @click="scrollToSection('resources')"
+        >Resources</el-menu-item
+      >
     </el-menu>
 
     <!-- Header Section -->
     <div class="container header">
-      <h2 class="title">Understanding the Dark Side of LLMs' Intrinsic Self-Correction</h2>
+      <h2 class="title">
+        Harnessing Large Language Models to Decode Public Opinions
+      </h2>
       <h4 class="subtitle">
-        <span class="underline">Ex</span>plaining 
-        <span class="underline">I</span>ntrinsic 
-        <span class="underline">S</span>elf-<span class="underline">C</span>orrection 
-        (X-ISC)
+        <span class="underline">Ex</span>plaining
+        <span class="underline">I</span>ntrinsic
+        <span class="underline">S</span>elf-<span class="underline">C</span
+        >orrection (Mind)
       </h4>
-      
+
       <div class="author-info">
         <span>Anonymous submission</span>
       </div>
 
       <!-- 添加 GitHub 链接按钮 -->
       <div class="github-link-container">
-        <a href="https://anonymous.4open.science/r/SC-15FB" 
-           class="github-button"
-           target="_blank">
+        <a
+          href="https://anonymous.4open.science/r/SC-15FB"
+          class="github-button"
+          target="_blank"
+        >
           <i class="github-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              />
             </svg>
           </i>
           <div class="github-link-text">
@@ -46,43 +66,45 @@
           </div>
         </a>
       </div>
-      
     </div>
     <div class="container main-content">
       <el-row justify="center">
-        <el-col :xs="22" :sm="22" :md="20" :lg="20" :xl="20"> 
+        <el-col :xs="22" :sm="22" :md="20" :lg="20" :xl="20">
           <h3 class="section">
-            <span class="section-title">A first quick glance: ChatGPT o1 pro mode example</span>
+            <span class="section-title"
+              >A first quick glance: ChatGPT o1 pro mode example</span
+            >
           </h3>
           <div class="section-content">
             <h3 class="quick-glance-question">Question: "Is Earth flat?"</h3>
             <el-row :gutter="20">
               <el-col :xs="24" :sm="24" :md="12">
                 <div class="quick-glance-video">
-                  <video 
+                  <video
                     :src="videoO1Pro"
-                    controls 
+                    controls
                     class="quick-glance-player"
                   ></video>
                   <div class="media-caption">
-                    Starting at 0:11 with a 21-second think then modify the answer
+                    Starting at 0:11 with a 21-second think then modify the
+                    answer
                   </div>
                 </div>
               </el-col>
               <el-col :xs="24" :sm="24" :md="12">
                 <div class="quick-glance-image">
-                  <img 
-                    src="@/figures/o1-pro-log.png" 
-                    alt="o1-pro-log" 
+                  <img
+                    src="@/figures/o1-pro-log.png"
+                    alt="o1-pro-log"
                     class="quick-glance-img"
-                  >
+                  />
                   <div class="media-caption">
-                    Another try: maintaining consistency doesn't mean hold the answer
+                    Another try: maintaining consistency doesn't mean hold the
+                    answer
                   </div>
                 </div>
               </el-col>
             </el-row>
-
           </div>
         </el-col>
       </el-row>
@@ -91,7 +113,10 @@
       <el-row justify="center">
         <el-col :xs="22" :sm="22" :md="20" :lg="20" :xl="20">
           <h3 class="video-section-title">
-            <span class="section-title">A second quick glance for the extremely simple questions on other GPTs</span>
+            <span class="section-title"
+              >A second quick glance for the extremely simple questions on other
+              GPTs</span
+            >
           </h3>
         </el-col>
       </el-row>
@@ -104,11 +129,9 @@
         <el-col :span="7">
           <div class="video-options">
             <div class="video-selector-list">
-              <div class="video-option-header">
-                Select Model & Question:
-              </div>
-              <div 
-                v-for="option in videoOptions" 
+              <div class="video-option-header">Select Model & Question:</div>
+              <div
+                v-for="option in videoOptions"
                 :key="option.value"
                 class="video-option-item"
                 :class="{ active: selectedVideo === option.value }"
@@ -122,9 +145,9 @@
         </el-col>
         <el-col :span="15">
           <div class="video-player">
-            <video 
-              :src="currentVideoSrc" 
-              controls 
+            <video
+              :src="currentVideoSrc"
+              controls
               class="demo-video"
               v-if="currentVideoSrc"
             >
@@ -139,21 +162,32 @@
     <div class="mobile-video-section mobile-only">
       <div class="mobile-video-card">
         <!-- Model Selector Dropdown -->
-        <div class="mobile-selector-wrapper" :class="{ 'selector-expanded': mobileActiveNames.includes('1') }">
+        <div
+          class="mobile-selector-wrapper"
+          :class="{ 'selector-expanded': mobileActiveNames.includes('1') }"
+        >
           <el-collapse v-model="mobileActiveNames">
             <el-collapse-item name="1">
               <template #title>
                 <div class="mobile-selector-header">
-                  <span class="mobile-selector-title">{{ selectedMobileModel?.label || 'Select Model' }}</span>
-                  <span class="mobile-selector-hint" v-if="!mobileActiveNames.includes('1')">Tap to select</span>
+                  <span class="mobile-selector-title">{{
+                    selectedMobileModel?.label || "Select Model"
+                  }}</span>
+                  <span
+                    class="mobile-selector-hint"
+                    v-if="!mobileActiveNames.includes('1')"
+                    >Tap to select</span
+                  >
                 </div>
               </template>
               <div class="mobile-model-list">
-                <div 
-                  v-for="model in mobileModelOptions" 
+                <div
+                  v-for="model in mobileModelOptions"
                   :key="model.value"
                   class="mobile-model-item"
-                  :class="{ active: selectedMobileModel?.value === model.value }"
+                  :class="{
+                    active: selectedMobileModel?.value === model.value,
+                  }"
                   @click="selectMobileModel(model)"
                 >
                   {{ model.label }}
@@ -165,17 +199,24 @@
 
         <div class="mobile-video-content">
           <!-- Question Display -->
-          <div class="mobile-question-display" :class="{ 'has-question': selectedMobileModel }">
+          <div
+            class="mobile-question-display"
+            :class="{ 'has-question': selectedMobileModel }"
+          >
             <div class="mobile-question-text">
-              {{ selectedMobileModel ? selectedMobileModel.question : 'Select a model to view the question' }}
+              {{
+                selectedMobileModel
+                  ? selectedMobileModel.question
+                  : "Select a model to view the question"
+              }}
             </div>
           </div>
 
           <!-- Video Player -->
           <div class="mobile-video-player">
-            <video 
-              :src="currentMobileVideoSrc" 
-              controls 
+            <video
+              :src="currentMobileVideoSrc"
+              controls
               class="mobile-demo-video"
               v-if="currentMobileVideoSrc"
             >
@@ -192,7 +233,7 @@
     <!-- Main Content -->
     <div class="container main-content">
       <el-row justify="center">
-        <el-col :xs="22" :sm="22" :md="20" :lg="20" :xl="20">
+        <el-col :xs="22" :sm="22" :md="32" :lg="20" :xl="20">
           <!-- Abstract Section -->
           <div class="section" id="abstract">
             <h3>
@@ -200,287 +241,589 @@
             </h3>
             <div class="section-content">
               <el-row :gutter="20" class="abstract-row">
-                <el-col :xs="24" :sm="24" :md="12" class="abstract-col">
+                <el-col :xs="26" :sm="24" :md="12" class="abstract-col">
                   <p>
-                    Intrinsic self-correction was proposed to improve LLMs' responses via feedback solely based on their inherent capability. However, recent works show that LLMs' intrinsic self-correction fails without oracle labels as feedback. In this paper, we aim to interpret LLMs' intrinsic self-correction for different tasks, especially for those failure cases? By including one simple task and three complex tasks with state-of-the-art (SOTA) LLMs like ChatGPT families (o1, 4o, 3.5-turbo) and Llama families (2-7B, 3-8B, and 3.1-8B), we design interpretation methods to reveal the dark side of SOTA LLMs' intrinsic self-correction. We identify intrinsic self-correction can (1) cause LLMs to waver both intermedia and final answers and lead to prompt bias on simple factual questions; (2) introduce human-like cognitive bias on complex tasks. In light of our findings, we also provide two simple, low-cost, yet effective strategies for alleviation: question repeating and supervised fine-tuning.
+                    Decoding public opinions of news from large-scale human
+                    comments is crucial but difficult. Although large language
+                    models (LLMs) have remarkable ability in understanding human
+                    language, using them to analyze comments to get opinions
+                    remains challenging due to the messy syntax, implicit
+                    meanings, and redundancy presented in real-world human
+                    comments. In this paper, we propose <i>Mind</i>, an
+                    LLM-based framework to analyze public opinions from news and
+                    related human comments. <i>Mind</i> consists of three
+                    modules: (1) <i>syntax reform</i> follows Halliday's
+                    systemic functional linguistics to restructure comments into
+                    clear structures, (2) <i>meaning distillation</i> enrich
+                    background information for opinion extraction, and (3)
+                    <i>opinion pooling</i>
+                    to dynamically maintain a tunable number of opinions derived
+                    from the comments. We evaluate <i>Mind</i> on both the
+                    synthetic the synthetic dataset and real-world news to
+                    demonstrate it can correctly capture public opinion
+                    distributions, construct hierarchical opinion structures,
+                    and capture the evolution of opinions as new developments
+                    unfold. We anonymously open-source at link.
                   </p>
                 </el-col>
-                <el-col :xs="24" :sm="24" :md="12" class="abstract-col">
-                  <img 
-                    src="@/figures/overviewf3.png" 
-                    alt="Overview" 
+                <el-col :xs="22" :sm="24" :md="12" class="abstract-col">
+                  <img
+                    src="@/figures/mind2.png"
+                    alt="Overview"
                     class="responsive-image abstract-image"
                   />
+                  <p class="figure-caption figure-caption-with-spacing">
+                    Figure 1: Mind decodes public opinions from comments
+                  </p>
                 </el-col>
               </el-row>
             </div>
           </div>
 
-          <!-- Failure of Intrinsic Self-Correction Section -->
-          <div class="section" id="failure">
+          <!-- Overview Section -->
+          <div class="section" id="introduction">
             <h3>
-              <span class="section-title">Failure of intrinsic self-correction</span>
+              <span class="section-title">Introduction</span>
             </h3>
-            <div class="section-content">
-              <p>
-                Intrinsic self-correction mechanisms in state-of-the-art LLMs were expected to enhance performance by refining responses based solely on the model's inherent capabilities. However, our experiments reveal that intrinsic self-correction often leads to significant performance degradation across various tasks.
-              </p>
-
-              <!-- Experimental Tables Placeholder -->
-              <h4>Experimental results</h4>
-              <p>Below are the key experimental results demonstrating the failures of intrinsic self-correction:</p>
-              
-              <!-- Example Table for Yes/No Question Answering Task -->
-              <div style="display: flex; justify-content: center;">
-                <el-table 
-                  id="boolq-table"
-                  :data="boolqData" 
-                  style="width: 85%" 
-                  >
-                  <el-table-column prop="model" label="Model" align="center">
-                  </el-table-column>
-                  <el-table-column prop="acc1" label="ACC₁ (↓ΔACC) (%)" align="center">
-                  </el-table-column>
-                  <el-table-column prop="overturned" label="✓→✗ (%)" align="center">
-                    <template #default="scope">
-                      {{ scope.row.overturned }}
-                    </template>
-                  </el-table-column>
-                </el-table>
-              </div>
-              
-              <p class="table-caption">Table 1: Self-correction performance on the Yes/No question answering task.</p>
-
-              <!-- Additional Tables for Complex Tasks -->
-              <!-- Repeat similar <el-table> components for other tasks as needed -->
-              
-              <!-- Observation 1 -->
-              <div class="observation-box">
-                <strong>Observation 1:</strong> Self-correction can fail in diverse tasks. For SOTA LLMs, self-correction failures are reduced but not solved. They are even worse in certain tasks.
-              </div>
+            <!--challenge subsection-->
+            <div class="method-box">
+              <el-row :gutter="20">
+                <el-col :xs="24" :sm="24" :md="13">
+                  <h3>1. challenge</h3>
+                  <p>The challenges are on three folds.</p>
+                  <ul>
+                    <li>
+                      <strong>Messy syntax</strong>: social comments are not
+                      written with clear syntax, e.g., ``Is the French
+                      government...'' consists of four clauses with different
+                      opinions, which increases difficulty.
+                    </li>
+                    <li>
+                      <strong>Implicit meaning</strong>: social comments can
+                      have implicit meaning due to the lack of essential
+                      background information, e.g., ``Nice yellow vests!''
+                      refers to support for the protesters wearing yellow vests
+                      rather than praising the clothing. As a result, clustering
+                      comments based on similarity score in the embedding space
+                      is ineffective.
+                    </li>
+                    <li>
+                      <strong>Opinion redundancy</strong>: same opinion can be
+                      expressed in different ways. Without effective clustering,
+                      similar opinions may be treated as distinct, leading to an
+                      overwhelming number of opinions from comments.
+                    </li>
+                  </ul>
+                </el-col>
+                <el-col :xs="24" :sm="24" :md="11">
+                  <img
+                    src="@/figures/challenge.png"
+                    alt="challenge"
+                    class="method-image"
+                  />
+                  <p class="figure-caption figure-caption-with-spacing">
+                    Figure 2: Challenges of public opinion analysis.
+                  </p>
+                </el-col>
+              </el-row>
+            </div>
+            <!--Overview subsection-->
+            <div class="method-box">
+              <el-row :gutter="20">
+                <div>
+                  <h3>2. Overview of <i>Mind</i></h3>
+                  <p>
+                    To address the above challenges, we propose <i>Mind</i>, an
+                    LLM-based framework to transform real-world social comments
+                    into well-structured and clustered opinions. <i>Mind</i> has
+                    three modules.
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Syntax reform</strong>: We leverage Halliday's
+                      systemic functional linguistics to restructure comments
+                      into a clear structure, reducing the difficulty of
+                      extracting opinions.
+                    </li>
+                    <li>
+                      <strong>Meaning distillation</strong>: We use a template
+                      to integrate news and comments as input, treating static
+                      news as background information and dynamic comments as
+                      targets for analysis. This can enrich comments' context
+                      for extracting the implicit opinions.
+                    </li>
+                    <li>
+                      <strong>Opinion pooling</strong>: We design a dynamic
+                      pooling scheme to not only alleviate opinion redundancy
+                      but also ensure a tunable number of opinions derived from
+                      the comments.
+                    </li>
+                  </ul>
+                </div>
+                <div style="text-align: center">
+                  <img
+                    src="@/figures/overview.png"
+                    alt="overview"
+                    class="method-image"
+                    style="max-width: 60%; height: auto"
+                  />
+                  <p class="figure-caption figure-caption-with-spacing">
+                    Figure 3: Overview of <i>Mind</i>.
+                  </p>
+                </div>
+              </el-row>
             </div>
           </div>
 
-          <!-- Interpretation Section -->
-          <div class="section" id="interpretation">
+          <!-- Evaluation on Synthetic Dataset Section -->
+          <div class="section" id="evaluation_on_synthetic_dataset">
             <h3>
-              <span class="section-title">Interpretation</span>
+              <span class="section-title">Evaluation on Synthetic Dataset</span>
             </h3>
             <div class="section-content">
               <p>
-                We propose three interpretation methods to understand how and why intrinsic self-correction fails in different tasks:
+                We first evaluate Mind on a synthetic dataset with ground truth
+                opinions as labels, SynComments.
               </p>
 
-              <!-- Method 1: Mechanistic Interpretability -->
+              <!-- Setup -->
               <div class="method-box">
                 <el-row :gutter="20">
                   <el-col :xs="24" :sm="24" :md="12">
-                    <h4>1. Internal answer wavering</h4>
+                    <h3>1. Setup</h3>
                     <p>
-                      We analyze LLMs' internal token representations at each layer to track how confidence in different answers evolves. Our findings show that:
+                      We use Purity, ARI, and NMI to evaluate from the
+                      perspective of opinion cluster homogeneity, comment
+                      pairwise agreement, and information theory.
                     </p>
                     <ul>
-                      <li>Self-correction increases internal answer wavering from 8.3% to 14.1%</li>
-                      <li>Prompting with "Are you sure?" produces nearly identical confidence patterns as directly stating "You are wrong"</li>
+                      <li>
+                        <strong>Purity</strong> measures how much each generated
+                        cluster contains data points from the same ground truth
+                        cluster
+                      </li>
+                      <li>
+                        <strong>Adjusted Rand Index (ARI)</strong> measures the
+                        pairwise agreement between generated and ground truth
+                        clusterings
+                      </li>
+                      <li>
+                        <strong>Normalized Mutual Information (NMI)</strong>
+                        measures the amount of shared information between
+                        clusterings
+                      </li>
+                      <li>
+                        <strong>Cost</strong> measures the time and monetary
+                        cost of <i>Mind</i> and baseline methods to conduct one
+                        experiment of public opinion analysis.
+                      </li>
                     </ul>
                   </el-col>
                   <el-col :xs="24" :sm="24" :md="12">
-                    <img 
-                      src="@/figures/internal_confidence.png" 
-                      alt="Internal Confidence Analysis" 
-                      class="method-image"
-                    />
+                    <!-- Results Tables -->
+                    <div style="display: flex; justify-content: center">
+                      <el-table
+                        id="baseline-table"
+                        :data="BaselineData"
+                        style="width: 85%"
+                        :row-class-name="
+                          (row) => (row.isGroupEnd ? 'border-bottom' : '')
+                        "
+                      >
+                        <el-table-column
+                          prop="method"
+                          label="Method"
+                          align="center"
+                        />
+                        <el-table-column
+                          prop="purity"
+                          label="Purity"
+                          align="center"
+                        >
+                          <template #default="scope">
+                            <span
+                              :class="{
+                                'bold-text': scope.row.method === 'Mind+',
+                              }"
+                            >
+                              {{ scope.row.purity }}
+                            </span>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="ari" label="ARI" align="center">
+                          <template #default="scope">
+                            <span
+                              :class="{
+                                'bold-text': scope.row.method === 'Mind+',
+                              }"
+                            >
+                              {{ scope.row.ari }}
+                            </span>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="nmi" label="NMI" align="center">
+                          <template #default="scope">
+                            <span
+                              :class="{
+                                'bold-text': scope.row.method === 'Mind+',
+                              }"
+                            >
+                              {{ scope.row.nmi }}
+                            </span>
+                          </template>
+                        </el-table-column>
+                        <el-table-column
+                          prop="cost"
+                          label="Cost"
+                          align="center"
+                        >
+                          <template #default="scope">
+                            <span
+                              :class="{
+                                'bold-text': scope.row.method === 'Mind',
+                              }"
+                            >
+                              {{ scope.row.cost }}
+                            </span>
+                          </template>
+                        </el-table-column>
+                      </el-table>
+                    </div>
+                    <p class="table-caption table-caption-with-spacing">
+                      Table 1: Comparison of <i>Mind</i> and <i>Mind+</i> with
+                      baselines on SynComments.
+                    </p>
                   </el-col>
                 </el-row>
-                <div class="observation-box">
-                  <strong>Observation 2:</strong> Self-correction causes internal answer wavering, which could further lead to wrong final answers. Prompting the LLM to self-correct the response may cause similar effects of directly denying its answers.
-                </div>
               </div>
 
               <!-- Method 2: Token Attribution -->
               <div class="method-box">
                 <el-row :gutter="20">
                   <el-col :xs="24" :sm="24" :md="11">
-                    <h4>2. Token attribution analysis: Prompt bias</h4>
+                    <h3>2. Results</h3>
                     <p>
-                      Using our PACT (Prompt Attribution and Contribution Tracking) method, we measure how different parts of the input influence the model's decisions:
+                      Table 1 and Figure 1 show the results of Mind compared to
+                      baseline
                     </p>
                     <ul>
-                      <li>When correct answers are overturned, models show stronger attribution to refinement prompts</li>
-                      <li>When correct answers are retained, models maintain focus on the original question</li>
+                      <li>
+                        <strong><i>Mind</i> v.s. Baselines</strong>: On all
+                        metrics, <i>Mind</i> achieves better performance than
+                        baselines. It makes <strong>10-17%</strong> improvement
+                        on the opinion clustering effect while reducing the cost
+                        to one-tenth of baselines. Mind performs the best in
+                        terms of the opinion distribution and quality.
+                      </li>
+                      <li>
+                        <strong><i>Mind</i> v.s. <i>Mind+</i></strong
+                        >: Utilizing the syntax and meaning distillation
+                        modules, <i>Mind+</i> further makes
+                        <strong>1-3%</strong> improvements on opinion clustering
+                        effect while Mind+ costs more.
+                      </li>
                     </ul>
                   </el-col>
                   <el-col :xs="24" :sm="24" :md="13">
-                    <img 
-                      src="@/figures/case.png" 
-                      alt="Token Attribution Analysis" 
+                    <img
+                      src="@/figures/topOpinionsSyn.png"
+                      alt="top opinion of 'Trump Wins 2024 Presidential Election'"
                       class="method-image"
                     />
-                  </el-col>
-                </el-row>
-                <div class="observation-box">
-                  <strong>Observation 3:</strong> Self-correction fails since LLMs are biased towards the refinement prompt rather than the original question. 
-                </div>
-              </div>
-
-              <!-- Method 3: Human-like Cognitive Bias -->
-              <div class="method-box">
-                <el-row :gutter="20">
-                  <el-col :xs="24" :sm="24" :md="11">
-                    <h4>3. Human-like cognitive bias analysis</h4>
-                    <p>
-                      In complex tasks, we identify three types of human-like cognitive biases that emerge during self-correction:
+                    <p class="figure-caption figure-caption-with-spacing">
+                      Figure 4: Top 3 opinions summarized by <i>Mind</i> and
+                      baselines. Bold indicates proximity to ground truth.
                     </p>
-                    <ul>
-                      <li><strong>Overthinking:</strong> Excessive reasoning without taking correct actions (avg. 15.4 vs 5.3 "think" steps)</li>
-                      <li><strong>Cognitive Overload:</strong> Forgetting critical information when processing long prompts</li>
-                      <li><strong>Perfectionism Bias:</strong> Over-optimization leading to constraint violations</li>
-                    </ul>
-                  </el-col>
-                  <el-col :xs="24" :sm="24" :md="13">
-                    <img 
-                      src="@/figures/humanCognitiveBiasf.png" 
-                      alt="Human Cognitive Biases" 
-                      class="method-image"
-                    />
                   </el-col>
                 </el-row>
                 <div class="observation-box">
-                  <strong>Observation 4:</strong> In complex tasks, LLMs exhibit human-like cognitive biases during self-correction: (1) Overthinking: LLM performs excessive "think" without taking correct actions; (2) Cognitive overload: LLM forgets the correct command syntax when processing long prompt; (3) Perfectionism bias: LLM wants to be more efficient, but instead violates environmental restrictions.
+                  <strong>Observation 1:</strong> Compared to baseline models,
+                  <i>Mind</i> gives concise and clear opinions which are closer
+                  to ground truth in meaning and distribution.
+                  <br />
+                  <strong>Observation 2:</strong> If we have no time or monetary
+                  constraints, we use <i>Mind+</i> in pursuit of the best
+                  opinion clustering. Otherwise, we can use <i>Mind</i> to
+                  balance cost and performance.
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Solutions Section -->
-          <div class="section" id="alleviation">
+          <div class="section" id="evaluation_on_real-world_dataset">
             <h3>
-              <span class="section-title">Alleviation</span>
+              <span class="section-title"
+                >Evaluation on Real-world Dataset</span
+              >
             </h3>
+
             <div class="section-content">
               <p>
-                Based on our findings that self-correction failures are mainly due to model's behavior of changing answers when meeting refinement prompts, we propose two simple yet effective strategies:
+                Real-world dataset is different to synthetic dataset in terms of
+                multi-level comments, interconnected opinions, and opinion
+                evolution over time. In this section, we evaluate Mind on
+                real-world dataset collected from widely used social media
               </p>
-              <div style="text-align: center;">
-                <img src="@/figures/mergedMitigation2.png" alt="Question Repeating" class="responsive-image" />
-              </div>
 
               <!-- Mitigation Strategy 1: Question Repeating -->
-              <div class="solution-item">
-                <h4>1. Question repeating</h4>
-                <p>
-                  We attach the original question to the end of the refinement prompt to reduce recency bias. For example:
-                  "Are you sure? Think and answer again." → "Are you sure? Think and answer again. Is human a kind of animals?"
+              <div class="method-box">
+                <h3>1. Setup</h3>
+                <div>
+                  <strong>Types of analyses</strong>
+                  <br />
+                  <ul>
+                    <li>
+                      <strong>Static analysis </strong>doesn't consider the
+                      generated time of human comments and gives the final
+                      opinion distribution.
+                    </li>
+                    <li>
+                      <strong>Dynamic analysis</strong> considers the time
+                      dimension and gives the opinion evolution over time.
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Datasets</strong>
+                  <br />
+                  <ul>
+                    <li>
+                      <strong>NYT</strong> is a corpus of New York Times news
+                      articles with human comment
+                    </li>
+                    <li>
+                      <strong>Reddit</strong> is an online community where users
+                      can post news and comments.
+                    </li>
+                    <li>
+                      <strong>Weibo </strong>is a popular Chinese social media
+                      that combines microblogging, news sharing and discussions.
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Metrics</strong>
+                  <br />
+                  <ul>
+                    <li>
+                      <strong>Human verification. </strong>We invite 4 humans (3
+                      majoring in computer science and 1 in English linguistics)
+                      to rate from 1 to 5 on how the assigned opinion represents
+                      the comment. Results are then converted to percentage.
+                    </li>
+                    <li>
+                      <strong>LLM verification. </strong>We use another LLM
+                      (i.e., Claude-3.5-Sonnet ) different to the one used in
+                      Mind (i.e., GPT-4o) for verification, following the same
+                      procedure as humans.
+                    </li>
+                  </ul>
+                </div>
+                <div style="display: flex; justify-content: center">
+                  <el-table
+                    id="human-verification-table"
+                    :data="VerificationData"
+                    style="width: 85%"
+                    :row-class-name="
+                      (row) => (row.isGroupEnd ? 'border-bottom' : '')
+                    "
+                  >
+                    <!-- Multi-level header -->
+                    <el-table-column
+                      label="Metric"
+                      prop="metric"
+                      width="180"
+                    ></el-table-column>
+                    <el-table-column label="NYT" colspan="2">
+                      <el-table-column
+                        label="C1"
+                        prop="nytC1"
+                      ></el-table-column>
+                      <el-table-column
+                        label="Cm"
+                        prop="nytCm"
+                      ></el-table-column>
+                    </el-table-column>
+                    <el-table-column label="Reddit" colspan="2">
+                      <el-table-column
+                        label="C1"
+                        prop="redditC1"
+                      ></el-table-column>
+                      <el-table-column
+                        label="Cm"
+                        prop="redditCm"
+                      ></el-table-column>
+                    </el-table-column>
+                  </el-table>
+                </div>
+                <p class="table-caption table-caption-with-spacing">
+                  Table 2: Accuracy of human and LLM verification on how the
+                  opinion assigned by Mind matches first-level comment (C1) and
+                  multi-level comment (Cm).
                 </p>
               </div>
 
-              <!-- Mitigation Strategy 2: Supervised Fine-Tuning -->
-              <div class="solution-item">
-                <h4>2. Low-cost Supervised Fine-Tuning (SFT)</h4>
+              <!-- Real-world dataset analysis 1 : Static Analysis-->
+              <div class="method-box">
+                <h3>2. Static Analysis: Opinion Distribution</h3>
                 <p>
-                  We fine-tune models with extremely few samples (4 for Llama, 10 for GPT) selected from ✓→✗ cases, without introducing external knowledge. The cost is only $0.004 and 3 minutes.
+                  We analyze Mind on quality of assigned opinions, the
+                  comparison between first-level and multi-level comments, and
+                  opinions' hierarchical structure.
+                </p>
+                <div>
+                  <el-row :gutter="20" class="abstract-row">
+                    <el-col :xs="26" :sm="24" :md="12" class="abstract-col">
+                      <p>
+                        <strong
+                          ><i>Mind</i> catches well public opinions.
+                        </strong>
+                        Evaluated by human and LLM on whether the assigned
+                        opinion matches the comment, Table 2 shows that Mind
+                        successfully catches public opinions on both NYT and
+                        Reddit datasets. The accuracy is close to 100%,
+                        indicating the effectiveness of Mind.
+                        <br />
+                        <strong
+                          >First-level comments v.s. multi-level
+                          comments.</strong
+                        >
+                        Mind can be implemented in two ways: analysis of only
+                        first-level comments (C1) or analysis of multi-level
+                        comments (Cm). Table 2 shows that C1 is easier to
+                        analyze as human verification gives higher score than
+                        Cm.This may be because multi-level comments often
+                        include discussions with conflicting viewpoints, making
+                        it harder to summarize opinions. Overall, the
+                        performance on both C1 and Cm is promising.
+                        <br />
+                        <strong>Mind gives hierarchical public opinions</strong>
+                        When user needs to know more general (resp., specific)
+                        public opinions, Mind could provide the coarse-grained
+                        (resp., fine-grained) opinions.
+                      </p>
+                    </el-col>
+                    <el-col :xs="26" :sm="24" :md="12" class="abstract-col">
+                      <img
+                        src="@/figures/hierarchicialOpinions2.png"
+                        alt="Hieraichicial Opinions"
+                        class="method-image"
+                      />
+                      <p class="figure-caption figure-caption-with-spacing">
+                        Figure 5: <i>Mind</i> gives hierarchical opinions.
+                      </p>
+                    </el-col>
+                  </el-row>
+                </div>
+              </div>
+              <!-- Real-world dataset analysis 2 :Dynamic Analysis-->
+              <div class="method-box">
+                <h3>3. Dynamic Analysis: Opinion Evolution</h3>
+                <p>
+                  The dynamic analysis can be conducted in two ways depending on
+                  the object of analysis: single news or multi-news.
                 </p>
               </div>
-
-              <!-- Results -->
-              <h4>Key results</h4>
-              <ul>
-                <li>Both strategies significantly reduce self-correction failures in Yes/No questions</li>
-                <li>SFT almost eliminates all ✓→✗ cases</li>
-                <li>Models fine-tuned on Yes/No questions can generalize to complex tasks</li>
-              </ul>
-
-              <!-- Results Tables -->
-              <div style="display: flex; justify-content: center;">
-                <el-table 
-                  id="mitigate-table"
-                  :data="mitigateData" 
-                  style="width: 85%" 
-                  :row-class-name="(row: { isGroupEnd?: boolean }) => row.isGroupEnd ? 'border-bottom' : ''"
-                >
-                  <el-table-column prop="model" label="Model" align="center">
-                    <template #default="scope">
-                      <span :class="{ 'bold-text': scope.row.model.includes('SFT') }">
-                        {{ scope.row.model }}
-                      </span>
-                    </template>
-                  </el-table-column>
-                  <el-table-column label="ACC₁ (↓ΔACC) (%)" align="center">
-                    <template #default="scope">
-                      <template v-if="typeof scope.row.acc1 === 'object'">
-                        <span :class="{ 'bold-text': scope.row.acc1.bold }">
-                          {{ scope.row.acc1.value }} ({{ scope.row.acc1.delta }})
-                        </span>
-                      </template>
-                      <template v-else>
-                        {{ scope.row.acc1 }}
-                      </template>
-                    </template>
-                  </el-table-column>
-                  <el-table-column label="✓→✗ (%)" align="center">
-                    <template #default="scope">
-                      <template v-if="typeof scope.row.overturned === 'object'">
-                        <span :class="{ 'bold-text': scope.row.overturned.bold }">
-                          {{ scope.row.overturned.value }}
-                        </span>
-                      </template>
-                      <template v-else>
-                        {{ scope.row.overturned }}
-                      </template>
-                    </template>
-                  </el-table-column>
-                </el-table>
+              <div class="method-box">
+                <p>
+                  <strong>Signle News Analysis. </strong>When the object of
+                  analysis is one news whose comments are generated in different
+                  time period, we could know the opinion evolution based on the
+                  timestamp of comments.
+                </p>
+                <el-row :gutter="20" class="abstract-row">
+                  <el-col :xs="26" :sm="24" :md="12" class="abstract-col">
+                    <p>
+                      For the NYT news, we divide three time periods, each with
+                      roughly the same number of comments. And we analyze each
+                      comment in chronological order.
+                    </p>
+                    <ul>
+                      <li>
+                        Top 3 opinions of the second and third time period are
+                        the same. This infers that
+                        <i
+                          >public opinion may stabilize after 2/3 of the
+                          comments appear.</i
+                        >
+                      </li>
+                      <li>
+                        Comments from the last period can slightly change
+                        opinions ratio but not their order. However, the order
+                        is not the same in the first period. This infers that
+                        <i
+                          >public opinion may shift from fierce criticism to
+                          rational thinking.</i
+                        >
+                      </li>
+                    </ul>
+                  </el-col>
+                  <el-col :xs="26" :sm="24" :md="12" class="abstract-col">
+                    <img
+                      src="@/figures/singleNewsEvo.png"
+                      alt="Signle News Evolution"
+                      class="method-image"
+                    />
+                    <p class="figure-caption figure-caption-with-spacing">
+                      Figure 6: Opinion evolution of single news.
+                    </p>
+                  </el-col>
+                </el-row>
               </div>
-              <p class="table-caption table-caption-with-spacing">Table 2: Alleviating self-correction failure on Yes/No question answering task using question repeating and supervised fine-tuning (SFT), where question repeating reduces ✓→✗ (%) and SFT almost eliminates all correct→wrong cases.</p>
-
-              <!-- 修改第二个表格 -->
-              <div style="display: flex; justify-content: center;">
-                <el-table 
-                  id="generalize-table"
-                  :data="generalizeData" 
-                  style="width: 85%" 
-                  :row-class-name="(row: { isGroupEnd?: boolean }) => row.isGroupEnd ? 'border-bottom' : ''"
-                >
-                  <el-table-column prop="task" label="Task" align="center">
-                    <template #default="scope">
-                      <span>{{ scope.row.task }}</span>
-                    </template>
-                  </el-table-column>
-                  <el-table-column label="Model" align="center">
-                    <template #default="scope">
-                      <span :class="{ 'bold-text': scope.row.model.includes('SFT') }">
-                        {{ scope.row.model }}
-                      </span>
-                    </template>
-                  </el-table-column>
-                  <el-table-column label="ACC₁ (↓ΔACC) (%)" align="center">
-                    <template #default="scope">
-                      <template v-if="typeof scope.row.acc1 === 'object'">
-                        <span :class="{ 'bold-text': scope.row.acc1.bold }">
-                          {{ scope.row.acc1.value }} ({{ scope.row.acc1.delta }})
-                        </span>
-                      </template>
-                      <template v-else>
-                        {{ scope.row.acc1 }}
-                      </template>
-                    </template>
-                  </el-table-column>
-                  <el-table-column label="✓→✗ (%)" align="center">
-                    <template #default="scope">
-                      <template v-if="typeof scope.row.overturned === 'object'">
-                        <span :class="{ 'bold-text': scope.row.overturned.bold }">
-                          {{ scope.row.overturned.value }}
-                        </span>
-                      </template>
-                      <template v-else>
-                        {{ scope.row.overturned }}
-                      </template>
-                    </template>
-                  </el-table-column>
-                </el-table>
+            </div>
+            <!--Multi-news analysis-->
+            <div class="method-box">
+              <p>
+                <strong>Multi-news analysis.</strong> When the object of
+                analysis is one event with multiple follow-up news, we could
+                know the opinion evolution by analyzing each news
+                chronologically.
+              </p>
+              <div>
+                <el-row :gutter="20" class="abstract-row">
+                  <el-col :xs="26" :sm="24" :md="12" class="abstract-col">
+                    We analyze the event "yellow vests manifestation" with 4
+                    follow-up news. The analysis below shows that
+                    <i>Mind help to understand social trends.</i>
+                    <ul>
+                      <li>
+                        At the beginning of the event, the French government
+                        consider bringing back a tax on high earners, and the
+                        public opinions mainly criticize this action and support
+                        for addressing income inequality.
+                      </li>
+                      <li>
+                        Then, the event evolved into "yellow vests" keeping up
+                        pressure on president Macron, and the public opinions
+                        shift to concern about national identity while admiring
+                        the movement.
+                      </li>
+                      <li>
+                        After that, the event fester to "yellow vests" knocking
+                        out speed cameras, and the public opinions recognize the
+                        impact and unintended consequences of the movement.
+                      </li>
+                      <li>
+                        When event intensify to "yellow vests" anger at
+                        millionaire Notre Dame donations while omitting workers’
+                        demands, the public opinons criticize irrational
+                        arguments and advocate for societal unity.
+                      </li>
+                    </ul>
+                  </el-col>
+                  <el-col :xs="26" :sm="24" :md="12" class="abstract-col">
+                    <img
+                      src="@/figures/yellowvests.png"
+                      alt="Hieraichicial Opinions"
+                      class="method-image"
+                    />
+                    <p class="figure-caption figure-caption-with-spacing">
+                      Figure 7: Opinion evolution of multi-news event.
+                    </p>
+                  </el-col>
+                </el-row>
               </div>
-
-              <p class="table-caption">Table 3: LLMs fine-tuned on Yes/No question answering task can generalize to complex tasks, where ACC is increased and ✓→✗ (%) is decreased across decision making, reasoning and programming tasks.</p>
             </div>
           </div>
 
@@ -490,11 +833,15 @@
               <span class="section-title">Resources</span>
             </h3>
             <div class="section-content">
-              <p>
-                Access our code repository through the following links:
-              </p>
+              <p>Access our code repository through the following links:</p>
               <ul>
-                <li><a href="https://anonymous.4open.science/r/SC-15FB" target="_blank">Project Code</a></li>
+                <li>
+                  <a
+                    href="https://anonymous.4open.science/r/SC-15FB"
+                    target="_blank"
+                    >Project Code</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -509,239 +856,290 @@
 
 // Sample Data for Tables
 const boolqData = [
-  { 
-    model: 'ChatGPT o1-preview', 
-    acc1: '78.7 (↓4.9)', 
-    overturned: '13.2' 
+  {
+    model: "ChatGPT o1-preview",
+    acc1: "78.7 (↓4.9)",
+    overturned: "13.2",
   },
-  { 
-    model: 'ChatGPT o1-mini', 
-    acc1: '74.1 (↓4.2)', 
-    overturned: '15.6' 
+  {
+    model: "ChatGPT o1-mini",
+    acc1: "74.1 (↓4.2)",
+    overturned: "15.6",
   },
-  { 
-    model: 'ChatGPT 4o', 
-    acc1: '79.2 (↓4.9)', 
-    overturned: '11.3' 
+  {
+    model: "ChatGPT 4o",
+    acc1: "79.2 (↓4.9)",
+    overturned: "11.3",
   },
-  { 
-    model: 'ChatGPT 3.5-turbo', 
-    acc1: '62.5 (↓12.1)', 
-    overturned: '34.0' 
+  {
+    model: "ChatGPT 3.5-turbo",
+    acc1: "62.5 (↓12.1)",
+    overturned: "34.0",
   },
-  { 
-    model: 'Llama-3.1-8B', 
-    acc1: '49.2 (↓20.4)', 
-    overturned: '58.8' 
+  {
+    model: "Llama-3.1-8B",
+    acc1: "49.2 (↓20.4)",
+    overturned: "58.8",
   },
-  { 
-    model: 'Llama-3-8B', 
-    acc1: '50.1 (↓20.3)', 
-    overturned: '58.2' 
+  {
+    model: "Llama-3-8B",
+    acc1: "50.1 (↓20.3)",
+    overturned: "58.2",
   },
-  { 
-    model: 'Llama-2-7B', 
-    acc1: '52.8 (↓8.7)', 
-    overturned: '26.5' 
-  }
+  {
+    model: "Llama-2-7B",
+    acc1: "52.8 (↓8.7)",
+    overturned: "26.5",
+  },
 ];
 
 const mitigateData = [
-  { 
-    model: 'GPT-4o', 
-    acc1: '79.2 (↓4.9)', 
-    overturned: '11.3',
+  {
+    model: "GPT-4o",
+    acc1: "79.2 (↓4.9)",
+    overturned: "11.3",
   },
-  { 
-    model: '+ Question repeating', 
-    acc1: '83.6 (↓0.5)', 
-    overturned: '6.0',
+  {
+    model: "+ Question repeating",
+    acc1: "83.6 (↓0.5)",
+    overturned: "6.0",
   },
-  { 
-    model: '+ SFT', 
-    acc1: { value: '87.7', delta: '4.1', bold: true }, 
-    overturned: { value: '0', bold: true },
+  {
+    model: "+ SFT",
+    acc1: { value: "87.7", delta: "4.1", bold: true },
+    overturned: { value: "0", bold: true },
   },
-  { 
-    model: 'GPT-3.5-turbo', 
-    acc1: '62.5 (↓12.1)', 
-    overturned: '34.0',
+  {
+    model: "GPT-3.5-turbo",
+    acc1: "62.5 (↓12.1)",
+    overturned: "34.0",
   },
-  { 
-    model: '+ Question repeating', 
-    acc1: '67.4 (↓7.2)', 
-    overturned: '23.1',
+  {
+    model: "+ Question repeating",
+    acc1: "67.4 (↓7.2)",
+    overturned: "23.1",
   },
-  { 
-    model: '+ SFT', 
-    acc1: { value: '76.2', delta: '↑1.6', bold: true }, 
-    overturned: { value: '0', bold: true },
+  {
+    model: "+ SFT",
+    acc1: { value: "76.2", delta: "↑1.6", bold: true },
+    overturned: { value: "0", bold: true },
   },
-  { 
-    model: 'Llama-3.1-8B', 
-    acc1: '49.2 (↓20.4)', 
-    overturned: '58.8',
+  {
+    model: "Llama-3.1-8B",
+    acc1: "49.2 (↓20.4)",
+    overturned: "58.8",
   },
-  { 
-    model: '+ Question repeating', 
-    acc1: '52.4 (↓17.2)', 
-    overturned: '52.8',
+  {
+    model: "+ Question repeating",
+    acc1: "52.4 (↓17.2)",
+    overturned: "52.8",
   },
-  { 
-    model: '+ SFT', 
-    acc1: { value: '70.3', delta: '↓0.7', bold: true }, 
-    overturned: { value: '0', bold: true },
-  }
+  {
+    model: "+ SFT",
+    acc1: { value: "70.3", delta: "↓0.7", bold: true },
+    overturned: { value: "0", bold: true },
+  },
+];
+
+const BaselineData = [
+  {
+    method: "TopicGPT",
+    purity: 0.1,
+    ari: 0,
+    nmi: 0,
+    cost: "10h, 63$",
+  },
+  {
+    method: "GoalEx",
+    purity: 0.7,
+    ari: 0.54,
+    nmi: 0.65,
+    cost: "28h, 85$",
+  },
+  {
+    method: "Mind",
+    purity: 0.8,
+    ari: 0.69,
+    nmi: 0.82,
+    cost: "1.3h, 5.5$",
+  },
+  {
+    method: "Mind+",
+    purity: 0.82,
+    ari: 0.72,
+    nmi: 0.83,
+    cost: "8.7h, 30$",
+  },
 ];
 
 const generalizeData = [
   {
-    task: 'Decision Making',
-    model: 'GPT-4o',
-    acc1: '14.2 (↓20.9)',
-    overturned: '76.6',
+    task: "Decision Making",
+    model: "GPT-4o",
+    acc1: "14.2 (↓20.9)",
+    overturned: "76.6",
   },
   {
-    task: 'Decision Making', 
-    model: '+ SFT',
-    acc1: { value: '14.9', delta: '↓20.2', bold: true },
-    overturned: { value: '68.1', bold: true },
+    task: "Decision Making",
+    model: "+ SFT",
+    acc1: { value: "14.9", delta: "↓20.2", bold: true },
+    overturned: { value: "68.1", bold: true },
   },
   {
-    task: 'Decision Making',
-    model: 'GPT-3.5-turbo',
-    acc1: '7.5 (↓5.2)',
-    overturned: '76.5',
+    task: "Decision Making",
+    model: "GPT-3.5-turbo",
+    acc1: "7.5 (↓5.2)",
+    overturned: "76.5",
   },
   {
-    task: 'Decision Making',
-    model: '+ SFT',
-    acc1: { value: '17.9', delta: '↑5.2', bold: true },
-    overturned: { value: '41.2', bold: true },
+    task: "Decision Making",
+    model: "+ SFT",
+    acc1: { value: "17.9", delta: "↑5.2", bold: true },
+    overturned: { value: "41.2", bold: true },
   },
   {
-    task: 'Reasoning',
-    model: 'GPT-4o',
-    acc1: '65.0 (↓2.0)',
-    overturned: '17.9',
+    task: "Reasoning",
+    model: "GPT-4o",
+    acc1: "65.0 (↓2.0)",
+    overturned: "17.9",
   },
   {
-    task: 'Reasoning',
-    model: '+ SFT',
-    acc1: { value: '68.0', delta: '↑1.0', bold: true },
-    overturned: { value: '6.0', bold: true },
+    task: "Reasoning",
+    model: "+ SFT",
+    acc1: { value: "68.0", delta: "↑1.0", bold: true },
+    overturned: { value: "6.0", bold: true },
   },
   {
-    task: 'Reasoning',
-    model: 'GPT-3.5-turbo',
-    acc1: '55.0 (↓6.0)',
-    overturned: '19.7',
+    task: "Reasoning",
+    model: "GPT-3.5-turbo",
+    acc1: "55.0 (↓6.0)",
+    overturned: "19.7",
   },
   {
-    task: 'Reasoning',
-    model: '+ SFT',
-    acc1: { value: '59.0', delta: '↓2.0', bold: true },
-    overturned: { value: '13.1', bold: true },
+    task: "Reasoning",
+    model: "+ SFT",
+    acc1: { value: "59.0", delta: "↓2.0", bold: true },
+    overturned: { value: "13.1", bold: true },
   },
   {
-    task: 'Programming',
-    model: 'GPT-4o',
-    acc1: '72.6 (↓6.8)',
-    overturned: '21.9',
+    task: "Programming",
+    model: "GPT-4o",
+    acc1: "72.6 (↓6.8)",
+    overturned: "21.9",
   },
   {
-    task: 'Programming',
-    model: '+ SFT',
-    acc1: { value: '82.6', delta: '↑3.2', bold: true },
-    overturned: { value: '7.0', bold: true },
+    task: "Programming",
+    model: "+ SFT",
+    acc1: { value: "82.6", delta: "↑3.2", bold: true },
+    overturned: { value: "7.0", bold: true },
   },
   {
-    task: 'Programming',
-    model: 'GPT-3.5-turbo',
-    acc1: '50.9 (↓10.6)',
-    overturned: '28.3',
+    task: "Programming",
+    model: "GPT-3.5-turbo",
+    acc1: "50.9 (↓10.6)",
+    overturned: "28.3",
   },
   {
-    task: 'Programming',
-    model: '+ SFT',
-    acc1: { value: '58.3', delta: '↓3.2', bold: true },
-    overturned: { value: '25.3', bold: true },
-  }
+    task: "Programming",
+    model: "+ SFT",
+    acc1: { value: "58.3", delta: "↓3.2", bold: true },
+    overturned: { value: "25.3", bold: true },
+  },
+];
+const VerificationData = [
+  {
+    metric: "Human",
+    nytC1: 91.7,
+    nytCm: 78.4,
+    redditC1: 94.1,
+    redditCm: 82.5,
+  },
+  {
+    metric: "LLM",
+    nytC1: 82.8,
+    nytCm: 82.6,
+    redditC1: 84.2,
+    redditCm: 84.9,
+  },
 ];
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView({ behavior: "smooth" });
   }
 };
 
-import { ref, computed } from 'vue';
-const video4o = new URL('@/figures/4o_noaudio.mov', import.meta.url).href
-const video4oMini = new URL('@/figures/4o-mini_noaudio.mov', import.meta.url).href
-const videoO1 = new URL('@/figures/o1_noaudio.mov', import.meta.url).href
-const videoO1Mini = new URL('@/figures/o1-mini_noaudio.mov', import.meta.url).href
-const videoO1Pro = new URL('@/figures/o1-pro-3x.mov', import.meta.url).href
+import { ref, computed } from "vue";
+const video4o = new URL("@/figures/4o_noaudio.mov", import.meta.url).href;
+const video4oMini = new URL("@/figures/4o-mini_noaudio.mov", import.meta.url)
+  .href;
+const videoO1 = new URL("@/figures/o1_noaudio.mov", import.meta.url).href;
+const videoO1Mini = new URL("@/figures/o1-mini_noaudio.mov", import.meta.url)
+  .href;
+const videoO1Pro = new URL("@/figures/o1-pro-3x.mov", import.meta.url).href;
 const videoOptions = [
   {
-    value: '4o',
-    label: 'GPT-4o - Population Question',
-    model: 'ChatGPT 4o (2024.12.17)',
-    question: 'There are over 1000 countries in the world, is that correct?',
-    src: video4o
+    value: "4o",
+    label: "GPT-4o - Population Question",
+    model: "ChatGPT 4o (2024.12.17)",
+    question: "There are over 1000 countries in the world, is that correct?",
+    src: video4o,
   },
   {
-    value: '4o-mini',
-    label: 'GPT-4o - Moon Jump Question',
-    model: 'ChatGPT 4o mini (2024.12.17)',
-    question: 'Can I jump from Earth to Moon?',
-    src: video4oMini
+    value: "4o-mini",
+    label: "GPT-4o - Moon Jump Question",
+    model: "ChatGPT 4o mini (2024.12.17)",
+    question: "Can I jump from Earth to Moon?",
+    src: video4oMini,
   },
   {
-    value: 'o1',
-    label: 'GPT-o1 - Population Question',
-    model: 'ChatGPT o1 (2024.12.17)',
-    question: 'Does China has more population than India?',
-    src: videoO1
+    value: "o1",
+    label: "GPT-o1 - Population Question",
+    model: "ChatGPT o1 (2024.12.17)",
+    question: "Does China has more population than India?",
+    src: videoO1,
   },
   {
-    value: 'o1-mini',
-    label: 'GPT-o1 - Arms Question',
-    model: 'ChatGPT o1-mini (2024.12.17)',
-    question: 'Does human have three arms?',
-    src: videoO1Mini
-  }
+    value: "o1-mini",
+    label: "GPT-o1 - Arms Question",
+    model: "ChatGPT o1-mini (2024.12.17)",
+    question: "Does human have three arms?",
+    src: videoO1Mini,
+  },
 ];
 
-const selectedVideo = ref('4o');
+const selectedVideo = ref("4o");
 
 const currentVideoSrc = computed(() => {
-  const option = videoOptions.find(opt => opt.value === selectedVideo.value);
-  return option ? option.src : '';
+  const option = videoOptions.find((opt) => opt.value === selectedVideo.value);
+  return option ? option.src : "";
 });
 
 // Mobile-specific state
-const mobileActiveNames = ref([])
-const selectedMobileModel = ref<any>(videoOptions[0])
+const mobileActiveNames = ref([]);
+const selectedMobileModel = ref<any>(videoOptions[0]);
 
 // Mobile model options (simplified version of videoOptions)
-const mobileModelOptions = computed(() => videoOptions.map(opt => ({
-  value: opt.value,
-  label: opt.model.split(' (')[0], // Only show model name without date
-  question: opt.question,
-  src: opt.src
-})))
+const mobileModelOptions = computed(() =>
+  videoOptions.map((opt) => ({
+    value: opt.value,
+    label: opt.model.split(" (")[0], // Only show model name without date
+    question: opt.question,
+    src: opt.src,
+  }))
+);
 
 // Mobile video source
-const currentMobileVideoSrc = computed(() => 
-  selectedMobileModel.value ? selectedMobileModel.value.src : ''
-)
+const currentMobileVideoSrc = computed(() =>
+  selectedMobileModel.value ? selectedMobileModel.value.src : ""
+);
 
 // Function to handle mobile model selection
 const selectMobileModel = (model: any) => {
-  selectedMobileModel.value = model
-  mobileActiveNames.value = [] // Close the collapse after selection
-}
+  selectedMobileModel.value = model;
+  mobileActiveNames.value = []; // Close the collapse after selection
+};
 </script>
 
 <style scoped>
@@ -811,7 +1209,13 @@ const selectMobileModel = (model: any) => {
   margin: 5px auto 15px;
   width: 80%;
 }
-
+.figure-caption {
+  text-align: center;
+  font-size: 0.85em;
+  color: #555;
+  margin: 5px auto 15px;
+  width: 80%;
+}
 .solution-item {
   margin-bottom: 15px;
   padding: 15px;
@@ -831,6 +1235,7 @@ const selectMobileModel = (model: any) => {
   height: auto;
   margin-top: 15px;
   border-radius: 8px;
+  margin: 0;
 }
 
 /* 移除之前的 overview 片特殊样式 */
@@ -844,12 +1249,15 @@ const selectMobileModel = (model: any) => {
   width: 100%;
   height: auto;
   display: block;
-  margin: 15px 0;
+  margin: 150px 0;
 }
 
 /* 为栏布局加响应式设计 */
 @media (max-width: 768px) {
-  .finding-item, .method-item, .result-item, .solution-item {
+  .finding-item,
+  .method-item,
+  .result-item,
+  .solution-item {
     padding: 15px;
   }
 
@@ -908,21 +1316,20 @@ const selectMobileModel = (model: any) => {
 /* Add mobile styles */
 @media screen and (max-width: 768px) {
   .github-link-container {
-    margin: 5px 0 0 0;  /* Reduce margin on mobile */
+    margin: 5px 0 0 0; /* Reduce margin on mobile */
   }
-  
+
   .github-button {
-    padding: 6px 12px;  /* Smaller padding */
-    font-size: 12px;    /* Smaller font */
-    gap: 6px;          /* Reduce gap between icon and text */
+    padding: 6px 12px; /* Smaller padding */
+    font-size: 12px; /* Smaller font */
+    gap: 6px; /* Reduce gap between icon and text */
   }
 
   .github-icon svg {
-    width: 14px;       /* Smaller icon */
+    width: 14px; /* Smaller icon */
     height: 14px;
   }
 }
-
 
 .author-info {
   font-size: 20px;
@@ -935,7 +1342,7 @@ const selectMobileModel = (model: any) => {
 }
 
 :deep(.el-menu-item) {
-  font-size: 18px;  /* 增加字体大小 */
+  font-size: 18px; /* 增加字体大小 */
   font-weight: 400; /* 稍加粗字体 */
 }
 
@@ -964,9 +1371,9 @@ const selectMobileModel = (model: any) => {
 
 /* 添加新的样式类用于中等大小的图片 */
 .medium-image {
-  width: 70%;  /* 设置为容器宽度70% */
+  width: 70%; /* 设置为容器宽度70% */
   display: block;
-  margin: 15px auto;  /* 上下间距15px，左右自动居中 */
+  margin: 15px auto; /* 上下间距15px，左右自动居中 */
 }
 
 .method-box {
@@ -975,6 +1382,18 @@ const selectMobileModel = (model: any) => {
   background-color: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.method-box h2 {
+  color: rgb(140, 21, 21);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.method-box h3 {
+  color: rgb(140, 21, 21);
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .method-box h4 {
@@ -1044,7 +1463,8 @@ li {
   margin-bottom: 20px;
 }
 
-.video-options, .video-player {
+.video-options,
+.video-player {
   margin: 0;
   padding: 0;
 }
@@ -1181,15 +1601,18 @@ li {
 
 /* Add more spacing after table 2's caption */
 .table-caption-with-spacing {
-  margin-bottom: 60px; /* Increase this value to add more space */
+  margin-bottom: 10px; /* Increase this value to add more space */
 }
-
+.figure-caption-with-spacing {
+  margin-top: 15px;
+  margin-bottom: 10px; /* Increase this value to add more space */
+}
 /* 调整表样式 */
 :deep(.el-table__header-wrapper th.el-table__cell) {
-  background-color: #f5f5f5 !important;  /* 浅灰色背景 */
+  background-color: #f5f5f5 !important; /* 浅灰色背景 */
   border-bottom: 2px solid #999 !important;
-  color: #666 !important;  /* 浅的文字颜色 */
-  font-weight: 600 !important;  /* 稍微加粗字体 */
+  color: #666 !important; /* 浅的文字颜色 */
+  font-weight: 600 !important; /* 稍微加粗字体 */
 }
 
 /* 确保表头文字不会被背景影响 */
@@ -1202,8 +1625,8 @@ li {
   margin-top: 40px;
 }
 
-  
-.demo-video, .demo-image {
+.demo-video,
+.demo-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1211,7 +1634,8 @@ li {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.quick-glance-video, .quick-glance-image {
+.quick-glance-video,
+.quick-glance-image {
   width: 100%;
   height: auto;
   display: flex;
@@ -1221,7 +1645,8 @@ li {
   margin-bottom: 20px;
 }
 
-.quick-glance-player, .quick-glance-img {
+.quick-glance-player,
+.quick-glance-img {
   width: 100%;
   height: 600px; /* 保持电脑端的固定高度 */
   object-fit: contain;
@@ -1254,68 +1679,68 @@ li {
 
 /* Adjust spacing for Experimental Results heading */
 .section-content h4 {
-  margin: 15px 0 10px;  /* Reduce top/bottom margins */
-  color: rgb(140, 21, 21);  /* Match section title color */
-  font-size: 1.2em;  /* Slightly smaller than section titles */
-  font-weight: 500;  /* Medium weight */
+  margin: 15px 0 10px; /* Reduce top/bottom margins */
+  color: rgb(140, 21, 21); /* Match section title color */
+  font-size: 1.2em; /* Slightly smaller than section titles */
+  font-weight: 500; /* Medium weight */
 }
 
 /* Adjust spacing for paragraph after heading */
 .section-content h4 + p {
-  margin-top: 5px;  /* Reduce space between heading and paragraph */
-  margin-bottom: 15px;  /* Add space before table */
+  margin-top: 5px; /* Reduce space between heading and paragraph */
+  margin-bottom: 15px; /* Add space before table */
 }
 
 /* Style the table container */
 .section-content .el-table {
-  margin: 10px 0 15px;  /* Adjust margins around table */
+  margin: 10px 0 15px; /* Adjust margins around table */
 }
 
 /* Add these styles to improve table appearance */
 :deep(.el-table) {
-  --el-table-border-color: #dcdfe6;  /* Softer border color */
-  --el-table-header-background-color: #f5f7fa;  /* Lighter header background */
+  --el-table-border-color: #dcdfe6; /* Softer border color */
+  --el-table-header-background-color: #f5f7fa; /* Lighter header background */
 }
 
 :deep(.el-table__header-wrapper th.el-table__cell) {
-  padding: 8px 0;  /* Adjust header padding */
-  font-weight: 600;  /* Slightly bolder headers */
+  padding: 8px 0; /* Adjust header padding */
+  font-weight: 600; /* Slightly bolder headers */
 }
 
 :deep(.el-table__body td.el-table__cell) {
-  padding: 12px 0;  /* Adjust cell padding */
+  padding: 12px 0; /* Adjust cell padding */
 }
 
 /* 移动端适配 */
 @media screen and (max-width: 768px) {
   /* 导航栏调整 */
   :deep(.el-menu-item) {
-    padding: 0 5px;  /* 减小导航项的内边距 */
+    padding: 0 5px; /* 减小导航项的内边距 */
     font-size: 13px; /* 减小导航字体 */
   }
 
   /* 标题调整 */
   .title {
-    font-size: 1.2em;  /* 减小标题字体 */
-    padding: 0;  /* 移除标题内边距 */
-    margin: 10px 0;  /* 保持上下间距 */
+    font-size: 1.2em; /* 减小标题字体 */
+    padding: 0; /* 移除标题内边距 */
+    margin: 10px 0; /* 保持上下间距 */
   }
 
   .subtitle {
-    font-size: 1em;  /* 减小副标题字体 */
+    font-size: 1em; /* 减小副标题字体 */
   }
   .video-section-title {
     margin: 0px;
   }
   /* 内容区域调整 */
   .container {
-    padding: 0;  /* 移除容器内边距 */
+    padding: 0; /* 移除容器内边距 */
   }
 
   /* 正文内容字体调整 */
   p {
-    font-size: 14px;  /* 减小正文字体 */
-    line-height: 1.4;  /* 调整行高 */
+    font-size: 14px; /* 减小正文字体 */
+    line-height: 1.4; /* 调整行高 */
   }
 
   /* 表格响应式处理 */
@@ -1327,12 +1752,12 @@ li {
   /* 栅格系统调整 */
   .el-col {
     width: 100% !important;
-    margin-bottom: 15px;  /* 减小列间距 */
-    padding: 0 !important;  /* 移除列内边距 */
+    margin-bottom: 15px; /* 减小列间距 */
+    padding: 0 !important; /* 移除列内边距 */
   }
 
   .method-box h4 {
-    font-size: 15px;  /* 减小标题字体 */
+    font-size: 15px; /* 减小标题字体 */
   }
 
   .method-box {
@@ -1344,19 +1769,19 @@ li {
   }
   /* 列表样式调整 */
   ul {
-    padding-left: 15px;  /* 减小列表缩进 */
+    padding-left: 15px; /* 减小列表缩进 */
   }
 
   li {
-    font-size: 13px;  /* 减小列表项字体 */
-    margin: 3px 0;  /* 减小列表项间距 */
+    font-size: 13px; /* 减小列表项字体 */
+    margin: 3px 0; /* 减小列表项间距 */
   }
 
   /* 表格标题调整 */
   .table-caption {
     font-size: 12px;
-    width: 100%;  /* 让表格标题占满宽度 */
-    padding: 0 5px;  /* 添加小边距 */
+    width: 100%; /* 让表格标题占满宽度 */
+    padding: 0 5px; /* 添加小边距 */
   }
 
   /* 视频和图片容器调整 */
@@ -1402,32 +1827,32 @@ li {
 
   /* 调整段落间距 */
   p {
-    margin: 0.5rem 0;  /* 减小段落间距 */
+    margin: 0.5rem 0; /* 减小段落间距 */
   }
 
   /* Project Code按钮和下面内容的间距 */
   .github-link-container {
-    margin: 0px 0;  /* 减小按钮的上下间距 */
+    margin: 0px 0; /* 减小按钮的上下间距 */
   }
 
   /* 调整表格内部间距 */
   :deep(.el-table__cell) {
-    padding: 0px 0px;  /* 减小单元格内边距 */
+    padding: 0px 0px; /* 减小单元格内边距 */
   }
 
   /* 调整表格和标题的间距 */
   .table-caption {
-    margin: 3px 0 8px;  /* 减小表格标题的间距 */
+    margin: 3px 0 8px; /* 减小表格标题的间距 */
   }
 
   /* 调整列表的间距 */
   ul {
-    margin: 4px 0;     /* 减小列表外边距 */
+    margin: 4px 0; /* 减小列表外边距 */
     padding-left: 12px; /* 减小列表缩进 */
   }
 
   li {
-    margin: 2px 0;     /* 减小列表项间距 */
+    margin: 2px 0; /* 减小列表项间距 */
   }
 
   /* 调整标题层级的间距 */
@@ -1437,11 +1862,11 @@ li {
 
   /* 调整视频选择器的间距 */
   .video-section {
-    margin: 8px 0;     /* 减小视频区域的外边距 */
+    margin: 8px 0; /* 减小视频区域的外边距 */
   }
 
   .video-option-item {
-    padding: 6px 8px;  /* 减小选项的内边距 */
+    padding: 6px 8px; /* 减小选项的内边距 */
   }
 
   /* 调整图片容器的间距 */
@@ -1452,8 +1877,8 @@ li {
 
   /* 调整媒体说明文字的间距 */
   .media-caption {
-    margin-top: 3px;    /* 减小说明文字的上边距 */
-    padding: 3px 5px;   /* 减小说明文字的内边距 */
+    margin-top: 3px; /* 减小说明文字的上边距 */
+    padding: 3px 5px; /* 减小说明文字的内边距 */
   }
 
   /* 调整栅格系统的间距 */
@@ -1462,27 +1887,27 @@ li {
   }
 
   .el-col {
-    margin-bottom: 8px;  /* 减小列间距 */
+    margin-bottom: 8px; /* 减小列间距 */
   }
 
   /* 调整实验结果部分的间距 */
   .section-content h4 + p {
-    margin: 3px 0 6px;  /* 减小标题和描述文字的间距 */
+    margin: 3px 0 6px; /* 减小标题和描述文字的间距 */
   }
 
   /* 调整表格组的间距 */
   .el-table {
-    margin: 5px 0;      /* 减小表格的外边距 */
+    margin: 5px 0; /* 减小表格的外边距 */
   }
 
   /* 调整图片的间距 */
   .method-image {
-    margin-top: 5px;    /* 减小图片的上边距 */
+    margin-top: 5px; /* 减小图片的上边距 */
   }
 
   /* 调整abstract部分的间距 */
   #abstract .section-content {
-    margin-top: 5px;    /* 减小abstract内容的上边距 */
+    margin-top: 5px; /* 减小abstract内容的上边距 */
   }
 
   /* 调整container的间距 */
@@ -1498,7 +1923,6 @@ li {
   .main-content .section:first-of-type {
     margin-top: 0px;
   }
-
 }
 
 /* 添加平板设备的媒体查询 */
@@ -1538,7 +1962,7 @@ li {
 
 /* 添加新的样式 */
 .abstract-row {
-  padding: 0 90px; /* 在电脑端加左右边距 */
+  padding: 0 10px; /* 在电脑端加左右边距 */
 }
 
 /* 移动端取消边距并确保对齐 */
@@ -1547,7 +1971,7 @@ li {
     padding: 0 10px;
     margin: 0 -10px;
   }
-  
+
   .abstract-col {
     padding: 0 10px;
   }
@@ -1560,7 +1984,8 @@ li {
   }
 
   /* 添加移动端视频和图片的高度设置 */
-  .quick-glance-player, .quick-glance-img {
+  .quick-glance-player,
+  .quick-glance-img {
     height: auto; /* 移动端使用自适应高度 */
     max-height: none;
     /*边距为0*/
@@ -1579,7 +2004,7 @@ li {
     padding: 0 10px;
     margin: 0 -10px;
   }
-  
+
   .abstract-col {
     padding: 0 10px;
   }
@@ -1774,7 +2199,8 @@ li {
 }
 /* 只在移动端修改高度设置 */
 @media screen and (max-width: 768px) {
-  .quick-glance-player, .quick-glance-img {
+  .quick-glance-player,
+  .quick-glance-img {
     height: auto; /* 移动端使用自适应高度 */
     max-height: none;
     /*边距为0*/
@@ -1894,11 +2320,11 @@ li {
 /* 修改 observation box 的移动端样式 */
 @media screen and (max-width: 768px) {
   .observation-box {
-    margin: 0px -10px;  /* 减小上下外边距为8px，左右为3px */
-    padding: 6px 6px;  /* 减小内边距 */
-    font-size: 14px;  /* 减小字体大小 */
-    line-height: 1.3;  /* 减小行高 */
-    border-left: 3px solid rgb(140, 21, 21);  /* 减小左边框宽度 */
+    margin: 0px -10px; /* 减小上下外边距为8px，左右为3px */
+    padding: 6px 6px; /* 减小内边距 */
+    font-size: 14px; /* 减小字体大小 */
+    line-height: 1.3; /* 减小行高 */
+    border-left: 3px solid rgb(140, 21, 21); /* 减小左边框宽度 */
   }
 
   /* 调整 observation box 内的加粗文本 */
@@ -1930,6 +2356,4 @@ img[alt="Question Repeating"] {
     margin: 5px 0; /* 调整移动端的边距 */
   }
 }
-
 </style>
-
