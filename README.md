@@ -9,22 +9,6 @@ This repository contains:
 
 📣📣Please also check our anonymous [project website](https://llm4opinion.site).
 
-## A quick glance for public opinions decoded by Mind
-<table style="width: 100%; border-collapse: collapse; text-align: center;">
-  <tr>
-    <td style="width: 50%; padding: 0; vertical-align: top; text-align: center;">
-      <!-- <b>ChatGPT o1 pro mode example</b><br> -->
-      <img src="video/NYTEnglishAdjustTime.gif" alt="GIF 1" style="max-width: 100%; height: auto;">
-      <!-- <div style="margin-top: 10px;">Question: "Is Earth flat?" For ChatGPT o1 pro, the fifth "Are you sure ..." stimulates 21-second think then modify the answer.</div> -->
-    </td>
-    <td style="width: 50%; padding: 0; vertical-align: top; text-align: center;">
-      <!-- <b>ChatGPT 4o (2024.12.17)</b><br> -->
-      <img src="video/NYTChineseAdjustTime.gif" alt="GIF 2" style="max-width: 100%; height: auto;">
-      <!-- <div style="margin-top: 10px;">Question: "There are over 1000 countries in the world, is that correct?" For ChatGPT 4o, "Are you sure ..." is easy to modify the answer.</div> -->
-    </td>
-  </tr>
-</table>
-
 Mind decodes public opinion evolution from news "Trump intensifies criticism of F.B.I. and journalists" (**Left**: English version; **Right**: Chinese version).
 
 ## Abstract
